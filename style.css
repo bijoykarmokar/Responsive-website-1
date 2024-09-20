@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: monospace;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 10px 80px;
+    background-color: rgb(33, 28, 63);
+}
+nav .logo h1{
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+nav ul{
+    display: flex;
+    
+}
+nav ul li{
+    list-style-type: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: 0.5s;
+}
+nav ul li a:hover{
+    background-color: rgb(96, 88, 153);
+    border-radius: 5px;
+}
+.menu-bar{
+    color:white;
+    font-size: 25px;
+    display: none;
+}
+#click{
+    display: none;
+}
+
+.hero-area{
+    background-image: url("/image/banner-img.jpg");
+}
+
+/* navbar responsive start */
+@media only screen and (max-width:900px){
+    .menu-bar{
+        display: block;
+    }
+    #click:checked ~ .menu-bar i::before{
+        content: "\f00d";
+    }
+    #click:checked ~ ul{
+        left: 0%;
+    }
+    nav ul{
+        position: fixed;
+        top:70px;
+        background-color: rgb(17, 17, 44);
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        transition: all 0.5s ease;
+        
+    }
+    nav ul li{
+        margin: 50px 0;
+        
+    }
+    nav ul li a{
+       font-size: 30px;
+    }
+    nav ul li a:hover{
+        background: none;
+        color:red;
+    }
+
+}
+
+/* hero-area started */
+.hero-area{
+    background-image: url('/image/banner-img.jpg');
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* main section has started */
+
+#first-section{
+    background-color:rgb(65, 56, 125);
+}
+#first-section h1{
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 30px;
+}
+.parent-services{
+    width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr); 
+    gap:15px;
+    text-align:center;
+    padding-bottom: 70px;
+
+}
+.single-services{
+    background-color: aliceblue;
+    padding:30px 20px;
+    border: 3px solid green;
+    box-shadow: 2px 2px 2px 2px grey;
+    border-radius: 10px;
+}
+.single-services a i{
+    font-size: 30px;
+    color:black;
+}
+.single-services h2{
+    font-size: 25px;
+    margin: 10px;
+}
+.single-services p{
+    font-weight: 600;
+}
+
+/* first main section responsive started */
+
+@media only screen and (max-width:688px){
+    .parent-services{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:689px) and (max-width:1099px){
+    .parent-services{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        width: 100%;
+    }
+}
